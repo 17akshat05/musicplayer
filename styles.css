@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -8,56 +10,116 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
-    background-color: #f5f5f5;
 }
 
+/* Main Container */
 #app {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: #1e1e1e;
     border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-h1, h2 {
-    color: #333;
+h1 {
+    font-size: 24px;
+    color: #e91e63;
+    margin-bottom: 5px;
 }
 
+h2 {
+    font-size: 16px;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+/* Player Options */
 .options {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .option {
-    background-color: #f0f0f0;
-    padding: 10px;
+    background-color: #333;
     border-radius: 10px;
-    cursor: pointer;
+    padding: 10px;
     width: 70px;
     text-align: center;
     font-weight: bold;
-    color: #555;
+    color: #fff;
+    transition: background-color 0.3s;
 }
 
 .option:hover {
-    background-color: #e0e0e0;
+    background-color: #444;
 }
 
-.controls {
-    margin-top: 20px;
-    text-align: left;
+#upload input[type="file"] {
+    display: none;
 }
 
+/* Controls */
 .controls label {
     display: block;
     font-weight: bold;
-    color: #555;
+    color: #ffffff;
     margin-top: 10px;
+    font-size: 14px;
 }
 
 .controls input[type="range"] {
     width: 100%;
+    -webkit-appearance: none;
+    height: 8px;
+    background: #333;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* Range Slider Styling */
+.controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .option {
+        padding: 8px;
+        width: 65px;
+        font-size: 12px;
+    }
+
+    .controls label {
+        font-size: 12px;
+    }
 }
